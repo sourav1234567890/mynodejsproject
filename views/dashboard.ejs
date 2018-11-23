@@ -1,0 +1,11 @@
+<% include partials/header.ejs %>
+<p>your dashboard</p>
+	<% if(logout!=""){ %>
+     <a href="/logout" rel="noopener" class="btn btn-sm btn-success"><%= logout %></a>       
+	<% } %>
+  <% if(login!=""){ %>     
+<a href="/login" rel="noopener" class="btn btn-sm btn-success"><%= login %></a>
+<% } %>
+
+       
+

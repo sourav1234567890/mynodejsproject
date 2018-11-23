@@ -1,0 +1,43 @@
+<% include partials/header.ejs %>
+<div class="container">
+<% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+
+        <% if(errors){ %>
+    <% errors.forEach((error, index) => { %>
+          <p class="alert alert-danger"><%= error.msg %></p>
+    <% }) %>
+    
+<% } %>
+
+	<form class="registration-form" action="" method="post">
+		<div class="">
+                <div class="form-group col-md-4">
+                	<label>first name</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-4">
+                	<label>last name</label>
+                    <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>useremail</label>
+                    <input type="text" class="form-control" name="useremail" id="last-name" placeholder="enter your user email">
+                </div>
+                <div class="form-group col-md-4">
+                	<label>password</label>
+                    <input type="password" class="form-control" name="password" id="username" placeholder="password">
+                </div>
+                <div class="form-group col-md-4">
+                	<label>confirm password</label>
+                    <input type="password" class="form-control" name="confirm_password" id="username" placeholder="password">
+                </div>
+                <button type="submit" class="btn btn-primary">submit</button>
+            </div>
+            
+	</form>
+</div>
+</div>
+</body>
+</html>

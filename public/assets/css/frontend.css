@@ -1,0 +1,20 @@
+.userimage{
+	border-radius: 100% !important;
+	height: 120px !important;
+	width: 120px !important;
+}
+.addfriend{
+	margin-top: 8px;
+    margin-left: 12px;
+}
+.friendname{
+	    position: absolute;
+    top: 65px;
+    margin-left: 13px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+.userbox{
+    margin-top: 30px;
+}

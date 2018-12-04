@@ -68,6 +68,7 @@ console.log(req.session);
 
 app.get('/',getHomePage);
 //console.log(session);
+
 app.get('/admin/login',adminlogin);
 app.get('/admin/dashboard',admindashboard);
 app.post('/admin/login',adminsubmit)

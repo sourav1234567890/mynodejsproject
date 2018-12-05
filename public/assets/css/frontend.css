@@ -18,3 +18,8 @@
 .userbox{
     margin-top: 30px;
 }
+.userimagenew {
+    border-radius: 100% !important;
+    height: 31px !important;
+     width: 33px !important; 
+}

@@ -33,7 +33,12 @@
         <% if (logout!="") {  %>
          <a class="float-right" href="/logout" title="logout"><%= logout %></a>
          <!-- <a class="float-right" href="/add" title="Add a New Player">Add a Player</a> -->
-         <a class="float-right" title="Friend lists">Friends</a>
+         <a class="float-right" title="Friend lists" href="">Friends</a>
+         <div class="username">
+            <img src="/assets/img/NO-IMAGE-AVAILABLE2.jpg" class="userimagenew">
+            <span class="username">sourav</span>
+         </div>
+         <a class="imageupload" href="">settings</a>
         <% }  %>
         <% if(login!=""){ %>
          <a class="float-right" href="/login" title="sign up"><%= login %></a>

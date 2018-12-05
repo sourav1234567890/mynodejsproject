@@ -2,24 +2,25 @@
 <div class="table-wrapper">
 <div class="container">
 	<div class="row">
-	<div class="col-md-4">
 	
-	</div>
-	<div class="col-md-4">
+	
 	<% players.forEach((player, index) => { %>
+	<div class="col-md-4">
 	<div class="userbox">
-	<img src="/assets/img/aaaa.jpeg" class="player-img userimage" alt="">
+	<%  if(player.image) { %>
+	<img src="/assets/img/<% player.image %>" class="player-img userimage" alt="">
+	<% }else { %>
+<img src="/assets/img/NO-IMAGE-AVAILABLE2.jpg" class="player-img userimage" alt="">
+	<%}%>
 	<div class="friendname">Sourav Singh</div>
 	<div class="add-friend">	
 	<button type="button" value="add" class="addfriend">Add Friend</button>
 	</div>
-
+</div>
 	</div>
 	 <% }) %>
-	</div>
-	<div class="col-md-4">
-
-	</div>
+	
+	
 </div>
 	</div>
 </div>

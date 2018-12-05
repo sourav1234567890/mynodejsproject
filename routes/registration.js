@@ -94,17 +94,21 @@ module.exports = {
     },
     login: (req,res) =>{
         var sessData = req.session;
+
         if(sessData.email1){
            // res.redirect('/dashboard');
+           let userimage=sessData.image;
            let logout="logout";
            res.render('dashboard.ejs',{
             title:"Welcome to app | please login",
             message:'',
            logout:logout,
-            login:''
+            login:'',
+            userimage:userimage
         });  
         }else{
             let login="login";
+            let userimage="";
           res.render('login.ejs',{
             title:"Welcome to app | please login",
             message:'',
@@ -112,6 +116,7 @@ module.exports = {
             login:login,
             success: req.session.success,
             errors: req.session.errors,
+            userimage:userimage,
 
         });
          req.session.errors = null;  
@@ -147,7 +152,7 @@ module.exports = {
         let usernameQuery = "SELECT * FROM `registration` WHERE email = '" + email + "' AND password = '"+ password +"'";
         db.query(usernameQuery,(err,result)=>{
             if(result.length>0){
-                console.log(result[0].status);
+                
                 if(result[0].status==0){
                     //console.log("hhhh");
                     message="you are not approved by admin please wait for admin approval";
@@ -160,15 +165,37 @@ module.exports = {
                 });
 
                 }else{
-                    console.log("true");
-                  console.log(result);
-                console.log("username is verified");
-                console.log(result);
+                   // console.log("souravvvv");
+                  
+                //console.log(result);
                 let id=result[0].id;
                 let email=result[0].email;
                 sess=req.session;
                 sess.email1=email;
                 sess.usrid=id;
+                /*code for image fetch for all users*/
+                let userimage="SELECT * FROM userimage WHERE userid="+id+"";
+
+                db.query(userimage,(err,result)=>{
+                    if(result.length>0){
+                        console.log("suravcc");
+                        let userimage1=result[0].image;
+                        console.log(userimage1);
+                         //sess=req.session;
+
+                        sess.userimage1=userimage1;
+                        console.log(userimage1);
+
+                    }else{
+                        console.log("dndnjn");
+                       sess.image=""; 
+                       
+                       
+                    }
+                });
+                /*end*/
+                console.log(sess.email1);
+                console.log(sess.usrid);
                 if(sess.email1){
                 res.redirect('/dashboard');
                 console.log("all logs");
